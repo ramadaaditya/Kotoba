@@ -12,6 +12,7 @@ dependencies {
     implementation(project(":core:database"))
     
     implementation(Libs.androidCoreKtx)
+    implementation(Libs.datastorePreferences)
 
     testImplementation(Libs.junit)
     testImplementation(Libs.kotlinxCoroutinesTest)

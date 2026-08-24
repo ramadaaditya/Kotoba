@@ -19,6 +19,7 @@ object Versions {
     const val room = "2.8.4"
     const val kotlinxCoroutines = "1.10.1"
     const val mockitoKotlin = "5.4.0"
+    const val datastore = "1.1.2"
     const val junit = "4.13.2"
     const val junitVersion = "1.3.0"
     const val espressoCore = "3.7.0"
@@ -27,6 +28,7 @@ object Versions {
 object Libs {
     const val androidCoreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"
+    const val lifecycleViewmodelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleRuntimeKtx}"
     const val activityCompose = "androidx.activity:activity-compose:${Versions.activityCompose}"
     
     const val composeBom = "androidx.compose:compose-bom:${Versions.composeBom}"
@@ -61,6 +63,7 @@ object Libs {
     
     const val kotlinxCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinxCoroutines}"
     const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.mockitoKotlin}"
+    const val datastorePreferences = "androidx.datastore:datastore-preferences:${Versions.datastore}"
 
     const val junit = "junit:junit:${Versions.junit}"
     const val androidxJunit = "androidx.test.ext:junit:${Versions.junitVersion}"
