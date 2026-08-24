@@ -1,0 +1,1 @@
+com.ramstudio.kotoba.core.data

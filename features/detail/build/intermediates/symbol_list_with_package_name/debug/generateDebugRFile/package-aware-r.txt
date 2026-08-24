@@ -1,1 +1,0 @@
-com.ramstudio.kotoba.features.detail

@@ -16,6 +16,10 @@ object Versions {
     const val kotlinxSerializationCore = "1.9.0"
     const val material3AdaptiveNav3 = "1.3.0-beta02"
     const val materialIcons = "1.7.8"
+    const val room = "2.8.4"
+    const val kotlinxCoroutines = "1.10.1"
+    const val mockitoKotlin = "5.4.0"
+    const val datastore = "1.1.2"
     const val junit = "4.13.2"
     const val junitVersion = "1.3.0"
     const val espressoCore = "3.7.0"
@@ -24,6 +28,7 @@ object Versions {
 object Libs {
     const val androidCoreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"
+    const val lifecycleViewmodelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleRuntimeKtx}"
     const val activityCompose = "androidx.activity:activity-compose:${Versions.activityCompose}"
     
     const val composeBom = "androidx.compose:compose-bom:${Versions.composeBom}"
@@ -51,7 +56,15 @@ object Libs {
     const val lifecycleViewmodelNav3 = "androidx.lifecycle:lifecycle-viewmodel-navigation3:${Versions.lifecycleViewmodelNav3}"
     const val material3AdaptiveNav3 = "androidx.compose.material3.adaptive:adaptive-navigation3:${Versions.material3AdaptiveNav3}"
     const val kotlinxSerializationCore = "org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.kotlinxSerializationCore}"
+
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     
+    const val kotlinxCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinxCoroutines}"
+    const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.mockitoKotlin}"
+    const val datastorePreferences = "androidx.datastore:datastore-preferences:${Versions.datastore}"
+
     const val junit = "junit:junit:${Versions.junit}"
     const val androidxJunit = "androidx.test.ext:junit:${Versions.junitVersion}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"

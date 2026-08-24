@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ramstudio.kotoba.core.common.Sm2Test" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-08-24T19:27:14.915Z" hostname="ITAMS-Ramada.local" time="0.013">
+  <properties/>
+  <testcase name="ease factor should increase for perfect quality" classname="com.ramstudio.kotoba.core.common.Sm2Test" time="0.007"/>
+  <testcase name="first repetition should have 1 day interval" classname="com.ramstudio.kotoba.core.common.Sm2Test" time="0.001"/>
+  <testcase name="failure quality should reset repetition count" classname="com.ramstudio.kotoba.core.common.Sm2Test" time="0.0"/>
+  <testcase name="second repetition should have 6 days interval" classname="com.ramstudio.kotoba.core.common.Sm2Test" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

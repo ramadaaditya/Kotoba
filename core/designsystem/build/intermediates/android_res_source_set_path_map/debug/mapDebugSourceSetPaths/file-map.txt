@@ -1,0 +1,9 @@
+com.ramstudio.kotoba.core.designsystem-pngs-0 /Users/mochammad.insan/development/android/kotoba/core/designsystem/build/generated/res/pngs/debug
+com.ramstudio.kotoba.core.designsystem-updated_navigation_xml-1 /Users/mochammad.insan/development/android/kotoba/core/designsystem/build/generated/updated_navigation_xml/debug
+com.ramstudio.kotoba.core.designsystem-mergeDebugResources-2 /Users/mochammad.insan/development/android/kotoba/core/designsystem/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.ramstudio.kotoba.core.designsystem-mergeDebugResources-3 /Users/mochammad.insan/development/android/kotoba/core/designsystem/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.ramstudio.kotoba.core.designsystem-debug-4 /Users/mochammad.insan/development/android/kotoba/core/designsystem/build/intermediates/merged_res/debug/mergeDebugResources
+com.ramstudio.kotoba.core.designsystem-debug-5 /Users/mochammad.insan/development/android/kotoba/core/designsystem/build/intermediates/packaged_res/debug/packageDebugResources
+com.ramstudio.kotoba.core.designsystem-debug-6 /Users/mochammad.insan/development/android/kotoba/core/designsystem/src/debug/res
+com.ramstudio.kotoba.core.designsystem-main-7 /Users/mochammad.insan/development/android/kotoba/core/designsystem/src/main/res
+gradleHome-0 /Users/mochammad.insan/.gradle
