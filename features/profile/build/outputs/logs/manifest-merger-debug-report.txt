@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mochammad.insan/development/android/kotoba/features/profile/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17152113267295319417.xml:2:13-83
+INJECTED from /Users/mochammad.insan/development/android/kotoba/features/profile/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17152113267295319417.xml:2:13-83
+	package
+		INJECTED from /Users/mochammad.insan/development/android/kotoba/features/profile/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17152113267295319417.xml
+	xmlns:android
+		ADDED from /Users/mochammad.insan/development/android/kotoba/features/profile/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17152113267295319417.xml:2:23-81
+uses-sdk
+INJECTED from /Users/mochammad.insan/development/android/kotoba/features/profile/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17152113267295319417.xml reason: use-sdk injection requested
+INJECTED from /Users/mochammad.insan/development/android/kotoba/features/profile/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17152113267295319417.xml
+INJECTED from /Users/mochammad.insan/development/android/kotoba/features/profile/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17152113267295319417.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mochammad.insan/development/android/kotoba/features/profile/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17152113267295319417.xml
+	android:minSdkVersion
+		INJECTED from /Users/mochammad.insan/development/android/kotoba/features/profile/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17152113267295319417.xml

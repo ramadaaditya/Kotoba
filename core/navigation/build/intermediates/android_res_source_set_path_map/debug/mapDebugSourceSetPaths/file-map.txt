@@ -1,0 +1,9 @@
+com.ramstudio.kotoba.core.navigation-pngs-0 /Users/mochammad.insan/development/android/kotoba/core/navigation/build/generated/res/pngs/debug
+com.ramstudio.kotoba.core.navigation-updated_navigation_xml-1 /Users/mochammad.insan/development/android/kotoba/core/navigation/build/generated/updated_navigation_xml/debug
+com.ramstudio.kotoba.core.navigation-mergeDebugResources-2 /Users/mochammad.insan/development/android/kotoba/core/navigation/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.ramstudio.kotoba.core.navigation-mergeDebugResources-3 /Users/mochammad.insan/development/android/kotoba/core/navigation/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.ramstudio.kotoba.core.navigation-debug-4 /Users/mochammad.insan/development/android/kotoba/core/navigation/build/intermediates/merged_res/debug/mergeDebugResources
+com.ramstudio.kotoba.core.navigation-debug-5 /Users/mochammad.insan/development/android/kotoba/core/navigation/build/intermediates/packaged_res/debug/packageDebugResources
+com.ramstudio.kotoba.core.navigation-debug-6 /Users/mochammad.insan/development/android/kotoba/core/navigation/src/debug/res
+com.ramstudio.kotoba.core.navigation-main-7 /Users/mochammad.insan/development/android/kotoba/core/navigation/src/main/res
+gradleHome-0 /Users/mochammad.insan/.gradle

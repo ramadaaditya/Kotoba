@@ -1,0 +1,58 @@
+object Versions {
+    const val agp = "9.2.1"
+    const val kotlin = "2.2.10"
+    const val coreKtx = "1.19.0"
+    const val lifecycleRuntimeKtx = "2.10.0"
+    const val activityCompose = "1.13.0"
+    const val composeBom = "2026.02.01"
+    const val hilt = "2.59.2"
+    const val hiltNavigationCompose = "1.3.0"
+    const val retrofit = "3.0.0"
+    const val okhttpBom = "5.4.0"
+    const val ksp = "2.3.9"
+    const val nav3Core = "1.1.2"
+    const val lifecycleViewmodelNav3 = "2.11.0-rc01"
+    const val kotlinSerialization = "2.2.21"
+    const val kotlinxSerializationCore = "1.9.0"
+    const val material3AdaptiveNav3 = "1.3.0-beta02"
+    const val materialIcons = "1.7.8"
+    const val junit = "4.13.2"
+    const val junitVersion = "1.3.0"
+    const val espressoCore = "3.7.0"
+}
+
+object Libs {
+    const val androidCoreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"
+    const val activityCompose = "androidx.activity:activity-compose:${Versions.activityCompose}"
+    
+    const val composeBom = "androidx.compose:compose-bom:${Versions.composeBom}"
+    const val composeUi = "androidx.compose.ui:ui"
+    const val composeUiGraphics = "androidx.compose.ui:ui-graphics"
+    const val composeUiTooling = "androidx.compose.ui:ui-tooling"
+    const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview"
+    const val composeUiTestManifest = "androidx.compose.ui:ui-test-manifest"
+    const val composeUiTestJunit4 = "androidx.compose.ui:ui-test-junit4"
+    const val composeMaterial3 = "androidx.compose.material3:material3"
+    const val composeMaterialIconsExtended = "androidx.compose.material:material-icons-extended:${Versions.materialIcons}"
+    
+    const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationCompose}"
+    
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val converterGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    const val okhttpBom = "com.squareup.okhttp3:okhttp-bom:${Versions.okhttpBom}"
+    const val okhttp = "com.squareup.okhttp3:okhttp"
+    const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor"
+    
+    const val nav3Runtime = "androidx.navigation3:navigation3-runtime:${Versions.nav3Core}"
+    const val nav3Ui = "androidx.navigation3:navigation3-ui:${Versions.nav3Core}"
+    const val lifecycleViewmodelNav3 = "androidx.lifecycle:lifecycle-viewmodel-navigation3:${Versions.lifecycleViewmodelNav3}"
+    const val material3AdaptiveNav3 = "androidx.compose.material3.adaptive:adaptive-navigation3:${Versions.material3AdaptiveNav3}"
+    const val kotlinxSerializationCore = "org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.kotlinxSerializationCore}"
+    
+    const val junit = "junit:junit:${Versions.junit}"
+    const val androidxJunit = "androidx.test.ext:junit:${Versions.junitVersion}"
+    const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
+}
