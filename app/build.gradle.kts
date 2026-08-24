@@ -30,10 +30,14 @@ android {
 dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":core:ui"))
-    implementation(project(":features:home"))
-    implementation(project(":features:search"))
-    implementation(project(":features:profile"))
-    implementation(project(":features:detail"))
+    implementation(project(":core:common"))
+    implementation(project(":core:data"))
+    implementation(project(":core:designsystem"))
+    implementation(project(":features:onboarding"))
+    implementation(project(":features:kana"))
+    implementation(project(":features:quiz"))
+    implementation(project(":features:srs"))
+    implementation(project(":features:reward"))
 
     implementation(Libs.activityCompose)
     implementation(Libs.composeMaterial3)

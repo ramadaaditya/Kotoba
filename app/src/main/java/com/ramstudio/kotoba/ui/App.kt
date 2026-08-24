@@ -55,11 +55,7 @@ fun App() {
             modifier = Modifier.padding(innerPadding),
             backStack = currentBackStack,
             onBack = { currentBackStack.removeLastOrNull() },
-            entryProvider = mainEntryProvider(
-                onNavigateToDetail = { id ->
-                    currentBackStack.add(Route.Detail(id))
-                }
-            )
+            entryProvider = mainEntryProvider()
         )
     }
 }

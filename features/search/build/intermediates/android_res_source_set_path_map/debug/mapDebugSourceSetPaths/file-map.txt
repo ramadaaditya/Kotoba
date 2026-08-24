@@ -1,9 +1,0 @@
-com.ramstudio.kotoba.features.search-pngs-0 /Users/mochammad.insan/development/android/kotoba/features/search/build/generated/res/pngs/debug
-com.ramstudio.kotoba.features.search-updated_navigation_xml-1 /Users/mochammad.insan/development/android/kotoba/features/search/build/generated/updated_navigation_xml/debug
-com.ramstudio.kotoba.features.search-mergeDebugResources-2 /Users/mochammad.insan/development/android/kotoba/features/search/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
-com.ramstudio.kotoba.features.search-mergeDebugResources-3 /Users/mochammad.insan/development/android/kotoba/features/search/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
-com.ramstudio.kotoba.features.search-debug-4 /Users/mochammad.insan/development/android/kotoba/features/search/build/intermediates/merged_res/debug/mergeDebugResources
-com.ramstudio.kotoba.features.search-debug-5 /Users/mochammad.insan/development/android/kotoba/features/search/build/intermediates/packaged_res/debug/packageDebugResources
-com.ramstudio.kotoba.features.search-debug-6 /Users/mochammad.insan/development/android/kotoba/features/search/src/debug/res
-com.ramstudio.kotoba.features.search-main-7 /Users/mochammad.insan/development/android/kotoba/features/search/src/main/res
-gradleHome-0 /Users/mochammad.insan/.gradle

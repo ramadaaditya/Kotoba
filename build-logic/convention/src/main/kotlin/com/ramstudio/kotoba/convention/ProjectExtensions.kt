@@ -28,6 +28,13 @@ internal fun Project.configureKotlinAndroid() {
     val setTargetCompatibilityMethod = compileOptions.javaClass.getMethod("setTargetCompatibility", JavaVersion::class.java)
     setSourceCompatibilityMethod.invoke(compileOptions, JavaVersion.VERSION_11)
     setTargetCompatibilityMethod.invoke(compileOptions, JavaVersion.VERSION_11)
+
+    val setCoreLibraryDesugaringEnabledMethod = compileOptions.javaClass.getMethod("setCoreLibraryDesugaringEnabled", Boolean::class.javaPrimitiveType)
+    setCoreLibraryDesugaringEnabledMethod.invoke(compileOptions, true)
+
+    dependencies {
+        add("coreLibraryDesugaring", libs.findLibrary("android-desugarJdkLibs").get())
+    }
 }
 
 internal fun Project.configureCompose() {

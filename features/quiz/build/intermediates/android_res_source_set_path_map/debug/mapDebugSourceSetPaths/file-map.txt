@@ -1,0 +1,9 @@
+com.ramstudio.kotoba.features.quiz-pngs-0 /Users/mochammad.insan/development/android/kotoba/features/quiz/build/generated/res/pngs/debug
+com.ramstudio.kotoba.features.quiz-updated_navigation_xml-1 /Users/mochammad.insan/development/android/kotoba/features/quiz/build/generated/updated_navigation_xml/debug
+com.ramstudio.kotoba.features.quiz-mergeDebugResources-2 /Users/mochammad.insan/development/android/kotoba/features/quiz/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.ramstudio.kotoba.features.quiz-mergeDebugResources-3 /Users/mochammad.insan/development/android/kotoba/features/quiz/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.ramstudio.kotoba.features.quiz-debug-4 /Users/mochammad.insan/development/android/kotoba/features/quiz/build/intermediates/merged_res/debug/mergeDebugResources
+com.ramstudio.kotoba.features.quiz-debug-5 /Users/mochammad.insan/development/android/kotoba/features/quiz/build/intermediates/packaged_res/debug/packageDebugResources
+com.ramstudio.kotoba.features.quiz-debug-6 /Users/mochammad.insan/development/android/kotoba/features/quiz/src/debug/res
+com.ramstudio.kotoba.features.quiz-main-7 /Users/mochammad.insan/development/android/kotoba/features/quiz/src/main/res
+gradleHome-0 /Users/mochammad.insan/.gradle

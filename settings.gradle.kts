@@ -25,9 +25,18 @@ dependencyResolutionManagement {
 
 rootProject.name = "Kotoba"
 include(":app")
+
+// Core Modules
+include(":core:common")
+include(":core:database")
+include(":core:data")
 include(":core:navigation")
 include(":core:ui")
-include(":features:home")
-include(":features:search")
-include(":features:profile")
-include(":features:detail")
+include(":core:designsystem")
+
+// Feature Modules
+include(":features:onboarding")
+include(":features:kana")
+include(":features:quiz")
+include(":features:srs")
+include(":features:reward")

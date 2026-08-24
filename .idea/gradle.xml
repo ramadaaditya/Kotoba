@@ -25,13 +25,18 @@
             <option value="$PROJECT_DIR$/build-logic" />
             <option value="$PROJECT_DIR$/build-logic/convention" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/common" />
+            <option value="$PROJECT_DIR$/core/data" />
+            <option value="$PROJECT_DIR$/core/database" />
+            <option value="$PROJECT_DIR$/core/designsystem" />
             <option value="$PROJECT_DIR$/core/navigation" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/features" />
-            <option value="$PROJECT_DIR$/features/detail" />
-            <option value="$PROJECT_DIR$/features/home" />
-            <option value="$PROJECT_DIR$/features/profile" />
-            <option value="$PROJECT_DIR$/features/search" />
+            <option value="$PROJECT_DIR$/features/kana" />
+            <option value="$PROJECT_DIR$/features/onboarding" />
+            <option value="$PROJECT_DIR$/features/quiz" />
+            <option value="$PROJECT_DIR$/features/reward" />
+            <option value="$PROJECT_DIR$/features/srs" />
           </set>
         </option>
       </GradleProjectSettings>

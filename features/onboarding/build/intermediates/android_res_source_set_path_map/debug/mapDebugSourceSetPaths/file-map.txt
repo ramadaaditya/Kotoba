@@ -1,0 +1,9 @@
+com.ramstudio.kotoba.features.onboarding-pngs-0 /Users/mochammad.insan/development/android/kotoba/features/onboarding/build/generated/res/pngs/debug
+com.ramstudio.kotoba.features.onboarding-updated_navigation_xml-1 /Users/mochammad.insan/development/android/kotoba/features/onboarding/build/generated/updated_navigation_xml/debug
+com.ramstudio.kotoba.features.onboarding-mergeDebugResources-2 /Users/mochammad.insan/development/android/kotoba/features/onboarding/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.ramstudio.kotoba.features.onboarding-mergeDebugResources-3 /Users/mochammad.insan/development/android/kotoba/features/onboarding/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.ramstudio.kotoba.features.onboarding-debug-4 /Users/mochammad.insan/development/android/kotoba/features/onboarding/build/intermediates/merged_res/debug/mergeDebugResources
+com.ramstudio.kotoba.features.onboarding-debug-5 /Users/mochammad.insan/development/android/kotoba/features/onboarding/build/intermediates/packaged_res/debug/packageDebugResources
+com.ramstudio.kotoba.features.onboarding-debug-6 /Users/mochammad.insan/development/android/kotoba/features/onboarding/src/debug/res
+com.ramstudio.kotoba.features.onboarding-main-7 /Users/mochammad.insan/development/android/kotoba/features/onboarding/src/main/res
+gradleHome-0 /Users/mochammad.insan/.gradle

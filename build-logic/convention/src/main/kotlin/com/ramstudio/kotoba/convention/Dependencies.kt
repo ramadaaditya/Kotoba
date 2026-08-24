@@ -16,6 +16,9 @@ object Versions {
     const val kotlinxSerializationCore = "1.9.0"
     const val material3AdaptiveNav3 = "1.3.0-beta02"
     const val materialIcons = "1.7.8"
+    const val room = "2.8.4"
+    const val kotlinxCoroutines = "1.10.1"
+    const val mockitoKotlin = "5.4.0"
     const val junit = "4.13.2"
     const val junitVersion = "1.3.0"
     const val espressoCore = "3.7.0"
@@ -51,7 +54,14 @@ object Libs {
     const val lifecycleViewmodelNav3 = "androidx.lifecycle:lifecycle-viewmodel-navigation3:${Versions.lifecycleViewmodelNav3}"
     const val material3AdaptiveNav3 = "androidx.compose.material3.adaptive:adaptive-navigation3:${Versions.material3AdaptiveNav3}"
     const val kotlinxSerializationCore = "org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.kotlinxSerializationCore}"
+
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     
+    const val kotlinxCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinxCoroutines}"
+    const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.mockitoKotlin}"
+
     const val junit = "junit:junit:${Versions.junit}"
     const val androidxJunit = "androidx.test.ext:junit:${Versions.junitVersion}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
