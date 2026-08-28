@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.ramstudio.kotoba.core.designsystem.component.KotobaButton
+import com.ramstudio.kotoba.core.designsystem.component.PrimaryButton
 
 @Composable
 fun OnboardingRoute(
@@ -54,12 +54,13 @@ fun OnboardingScreen(
             Text(
                 text = "Master Hiragana and Katakana with ease. Your journey to learning Japanese starts here.",
                 style = MaterialTheme.typography.bodyLarge,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.onBackground
             )
             
             Spacer(modifier = Modifier.height(48.dp))
             
-            KotobaButton(
+            PrimaryButton(
                 text = "Get Started",
                 onClick = onGetStartedClick
             )

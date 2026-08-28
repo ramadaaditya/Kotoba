@@ -11,36 +11,36 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = PrimaryDark,
-    secondary = SecondaryDark,
-    tertiary = TertiaryDark,
-    background = DeepInk,
-    surface = DeepInk,
-    onPrimary = DeepInk,
-    onSecondary = DeepInk,
-    onTertiary = DeepInk,
-    onBackground = PaperWhite,
-    onSurface = PaperWhite,
+    primary = Primary,
+    onPrimary = OnPrimary,
+    primaryContainer = PrimaryLight,
+    secondary = Secondary,
+    onSecondary = OnSecondary,
+    error = Error,
+    background = Background,
+    onBackground = OnBackground,
+    surface = SurfaceVariant,
+    onSurface = OnSurface,
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = PrimaryLight,
-    secondary = SecondaryLight,
-    tertiary = TertiaryLight,
-    background = PaperWhite,
-    surface = PaperWhite,
-    onPrimary = PaperWhite,
-    onSecondary = PaperWhite,
-    onTertiary = PaperWhite,
-    onBackground = DeepInk,
-    onSurface = DeepInk,
+    primary = Primary,
+    onPrimary = OnPrimary,
+    primaryContainer = PrimaryLight,
+    secondary = Secondary,
+    onSecondary = OnSecondary,
+    error = Error,
+    background = Background,
+    onBackground = OnBackground,
+    surface = SurfaceVariant,
+    onSurface = OnSurface,
 )
 
 @Composable
 fun KotobaTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false, // Set false to prioritize brand colors
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
@@ -56,6 +56,7 @@ fun KotobaTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = Shapes,
         content = content
     )
 }
