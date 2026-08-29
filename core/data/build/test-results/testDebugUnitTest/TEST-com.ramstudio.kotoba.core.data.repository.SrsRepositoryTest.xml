@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ramstudio.kotoba.core.data.repository.SrsRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-08-24T20:03:55.237Z" hostname="ITAMS-Ramada.local" time="1.093">
+<testsuite name="com.ramstudio.kotoba.core.data.repository.SrsRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-08-29T20:40:30.238Z" hostname="ITAMS-Ramada.local" time="0.866">
   <properties/>
-  <testcase name="processReview should update item in database" classname="com.ramstudio.kotoba.core.data.repository.SrsRepositoryTest" time="1.082"/>
-  <testcase name="processReview for existing item should apply SM2 logic" classname="com.ramstudio.kotoba.core.data.repository.SrsRepositoryTest" time="0.006"/>
+  <testcase name="processReview should update item in database" classname="com.ramstudio.kotoba.core.data.repository.SrsRepositoryTest" time="0.861"/>
+  <testcase name="processReview for existing item should apply SM2 logic" classname="com.ramstudio.kotoba.core.data.repository.SrsRepositoryTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/mochammad.insan/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.15/b4cc9d88d5de562bf75b3a54ab436ad01b3f72d/byte-buddy-agent-1.14.15.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning

@@ -1,0 +1,1 @@
+-keep,allowobfuscation,allowshrinking class com.ramstudio.kotoba.features.kana.KanaViewModel
