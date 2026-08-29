@@ -7,11 +7,13 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -21,14 +23,23 @@ import com.ramstudio.kotoba.ui.navigation.Route
 import com.ramstudio.kotoba.ui.navigation.TopLevelDestination
 import com.ramstudio.kotoba.ui.navigation.mainEntryProvider
 import com.ramstudio.kotoba.ui.theme.KotobaTheme
+import kotlinx.coroutines.delay
+
+private const val SPLASH_DELAY_MS = 1200L
 
 @Composable
 fun App() {
     val onboardingViewModel: OnboardingViewModel = hiltViewModel()
     val isOnboardingCompleted by onboardingViewModel.isOnboardingCompleted.collectAsState()
+    var isSplashVisible by rememberSaveable { mutableStateOf(true) }
 
-    var selectedDestination by remember { mutableStateOf(TopLevelDestination.KANA) }
-    
+    LaunchedEffect(Unit) {
+        delay(SPLASH_DELAY_MS)
+        isSplashVisible = false
+    }
+
+    var selectedDestination by rememberSaveable { mutableStateOf(TopLevelDestination.KANA) }
+
     // Multiple backstacks: one for each top level destination
     val kanaBackStack = remember { mutableStateListOf<Route>(Route.Kana) }
     val quizBackStack = remember { mutableStateListOf<Route>(Route.Quiz) }
@@ -51,6 +62,11 @@ fun App() {
     }
 
     KotobaTheme {
+        if (isSplashVisible) {
+            SplashScreen()
+            return@KotobaTheme
+        }
+
         Scaffold(
             bottomBar = {
                 if (isOnboardingCompleted) {
@@ -74,7 +90,9 @@ fun App() {
                 onBack = { currentBackStack.removeLastOrNull() },
                 entryProvider = mainEntryProvider(
                     onOnboardingComplete = {
-                        // Viewmodel will handle state update
+                        selectedDestination = TopLevelDestination.KANA
+                        kanaBackStack.clear()
+                        kanaBackStack.add(Route.Kana)
                     }
                 )
             )

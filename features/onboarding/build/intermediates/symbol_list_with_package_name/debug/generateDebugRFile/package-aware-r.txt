@@ -1,1 +1,4 @@
 com.ramstudio.kotoba.features.onboarding
+string get_started
+string onboarding_description
+string onboarding_title

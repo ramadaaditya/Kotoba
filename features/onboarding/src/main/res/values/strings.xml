@@ -1,0 +1,5 @@
+<resources>
+    <string name="onboarding_title">Welcome to Kotoba</string>
+    <string name="onboarding_description">Master Hiragana and Katakana with ease. Your journey to learning Japanese starts here.</string>
+    <string name="get_started">Get Started</string>
+</resources>

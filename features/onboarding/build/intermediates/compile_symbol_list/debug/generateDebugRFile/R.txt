@@ -1,0 +1,3 @@
+int string get_started 0x0
+int string onboarding_description 0x0
+int string onboarding_title 0x0
