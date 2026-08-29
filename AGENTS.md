@@ -69,4 +69,5 @@ Selalu jalankan `./gradlew testDebugUnitTest` setelah mengubah logika di `:core:
 
 - `PRD.md` — scope produk, fitur, dan keputusan desain (baca ini untuk tahu **apa** yang harus dibangun).
 - `ARSITEKTUR.md` — keputusan teknis mendetail (baca ini untuk tahu **bagaimana** membangunnya).
+- `DESIGN_SYSTEM.md` - sebagai referensi semua desin system project
 - Jika ada konflik antara instruksi user di chat dengan dokumen ini, **tanyakan konfirmasi** daripada menebak — terutama untuk hal yang menyentuh prinsip di Bagian "Yang TIDAK Boleh Dilakukan" di atas.

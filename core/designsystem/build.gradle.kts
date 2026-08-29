@@ -12,4 +12,6 @@ dependencies {
     implementation(Libs.composeUi)
     implementation(Libs.composeMaterial3)
     implementation(Libs.androidCoreKtx)
+    implementation(Libs.composeMaterialIconsExtended)
+    implementation(Libs.composeUiToolingPreview)
 }
