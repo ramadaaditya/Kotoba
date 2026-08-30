@@ -48,7 +48,7 @@ Sumber acuan visual: mockup desain (`docs/design/nihongo-design-mockup.png`) —
 | `Background` | `#F1F2F6` | Background layar netral (list, kuis) |
 | `TextPrimary` | `#1F2957` | Seluruh teks judul & body utama |
 
-**Belum terdefinisi dari mockup, perlu ditambahkan sebelum implementasi:** warna `Error` (untuk state jawaban salah) dan `OnPrimary`/`OnSecondary` (warna teks di atas tombol berwarna). Sarankan turunkan `Error` dari palet merah yang senada dengan `Rose` tapi lebih tegas (misal `#E5484D`), atau konfirmasi ke desain asli jika sudah ada di file Figma/sumber.
+**Belum terdefinisi dari mockup, perlu ditambahkan sebelum implementasi:** warna `Error` (untuk state jawaban salah **dan** tombol "Belum Tahu" di `SelfAssessmentButtons`, lihat Bagian 6) dan `OnPrimary`/`OnSecondary` (warna teks di atas tombol berwarna). Sarankan turunkan `Error` dari palet merah yang senada dengan `Rose` tapi lebih tegas (misal `#E5484D`), atau konfirmasi ke desain asli jika sudah ada di file Figma/sumber.
 
 ## 3. Tipografi
 
@@ -90,6 +90,7 @@ Sumber acuan visual: mockup desain (`docs/design/nihongo-design-mockup.png`) —
 | `MascotIllustration` | Wrapper untuk menampilkan pose maskot Kaito sesuai konteks (`Welcome`, `Reading`, `Celebrating`, dst) | Enum pose |
 | `StatCard` | Kartu kecil menampilkan satu metrik (misal "Streak Harian", "Skor Kuis") dengan ikon | — |
 | `QuizOptionCard` | Kartu pilihan jawaban di kuis, punya state default/selected/correct/incorrect | 4 state |
+| `SelfAssessmentButtons` | 3 tombol penilaian mandiri di halaman Detail Karakter, memicu update jadwal SRS | Belum Tahu (`Error`) / Ragu-ragu (`Warning`) / Hafal (`Success`) |
 
 **Aturan untuk agent:** semua komponen di atas dibuat di `core:designsystem` sebagai Composable reusable, **bukan** ditulis ulang secara lokal di tiap feature module. Kalau sebuah feature module butuh varian baru dari komponen yang sudah ada, tambahkan parameter/varian di komponen `core:designsystem`, jangan duplikasi.
 
@@ -116,7 +117,7 @@ Referensi silang antara 20 layar di mockup dan struktur modul di `ARSITEKTUR.md`
 | 1-4 | Onboarding 1-4 | `features:onboarding` |
 | 5 | Home / Dashboard | `features:profile` (atau modul `home` terpisah — lihat catatan Bagian 9) |
 | 6 | Pilih Kategori | `features:kana` |
-| 7 | Detail Karakter | `features:kana` |
+| 7 | Detail Karakter (+ tombol self-assessment 3 tingkat) | `features:kana` |
 | 8 | Progress Kategori | `features:kana` |
 | 9-11 | Kuis (Multiple Choice, Matching Pairs, Listen & Choose) | `features:quiz` |
 | 12 | Hasil Kuis | `features:quiz` |

@@ -1,6 +1,6 @@
 # Arsitektur — Aplikasi Belajar Bahasa Jepang
 
-> Dokumen ini menjelaskan **bagaimana** aplikasi dibangun secara teknis. Untuk **apa** yang dibangun dan **kenapa**, lihat `PRD.md`. Untuk aturan kerja AI coding agent di repo ini, lihat `AGENTS.md`.
+> Dokumen ini menjelaskan **bagaimana** aplikasi dibangun secara teknis. Untuk **apa** yang dibangun dan **kenapa**, lihat `PRD.md`. Untuk identitas visual dan spesifikasi komponen UI, lihat `DESIGN_SYSTEM.md`. Untuk aturan kerja AI coding agent di repo ini, lihat `AGENTS.md`.
 
 ## 1. Prinsip Arsitektur
 
@@ -112,7 +112,37 @@ Ini terpisah total dari runtime aplikasi — tidak ada kode di `:app` atau `:fea
 Diimplementasikan murni di `:core:common` (tanpa dependency Android) agar mudah di-unit-test tanpa emulator.
 
 **Input per kartu:** `easeFactor`, `interval` (hari), `repetitions`, `nextReviewDate`.
-**Output setelah user menjawab:** kartu baru dengan `interval` dan `easeFactor` yang disesuaikan berdasarkan kualitas jawaban (skala 0-5 atau disederhanakan jadi benar/salah untuk v1).
+**Output setelah user menjawab:** kartu baru dengan `interval` dan `easeFactor` yang disesuaikan berdasarkan kualitas jawaban (skala kualitas 0-5 standar SM-2).
+
+### 6.1 Dua Sumber Trigger, Satu Pintu Masuk
+
+SRS di aplikasi ini punya **dua sumber input** yang keduanya wajib memanggil fungsi yang sama, bukan jalur logika terpisah:
+
+1. **Otomatis dari hasil kuis** (`:features:quiz`) — benar/salah jawaban dikonversi jadi skala kualitas.
+2. **Manual dari halaman detail karakter** (`:features:kana`) — user menekan salah satu dari 3 tombol penilaian mandiri (self-assessment), mirip mekanisme Anki. Ini memungkinkan karakter yang sudah dikenal user sebelum sempat dikuis (misal dari pengetahuan sebelumnya) tetap bisa langsung masuk jadwal review tanpa menunggu sesi kuis.
+
+Kedua sumber ini **wajib** memanggil satu fungsi tunggal di repository:
+
+```kotlin
+// core:data
+interface SrsRepository {
+    suspend fun reviewCard(characterId: String, quality: Int) // quality: 0-5
+}
+```
+
+Baik `:features:quiz` maupun `:features:kana` hanya bertanggung jawab menghitung `quality` dari konteksnya masing-masing, lalu memanggil `reviewCard()` yang sama. Ini mencegah logika SRS bercabang dan hasil yang tidak konsisten tergantung dari mana review dipicu.
+
+### 6.2 Pemetaan Tombol Self-Assessment ke Skala Kualitas SM-2
+
+| Tombol (UI) | Skala kualitas SM-2 | Efek pada kartu |
+|---|---|---|
+| **Belum Tahu** | 1 | `repetitions` direset ke 0, `interval` kembali pendek (mulai dari awal) |
+| **Ragu-ragu** | 3 | `repetitions` tetap bertambah, tapi `interval` bertambah lebih kecil/hati-hati dibanding "Hafal" |
+| **Hafal** | 5 | `repetitions` bertambah, `interval` bertambah maksimal sesuai `easeFactor` |
+
+Detail rumus SM-2 lengkap (perhitungan `easeFactor` baru, dsb) diimplementasikan sebagai fungsi murni di `:core:common` dan diuji dengan unit test mencakup ketiga skenario di atas plus kombinasi berturut-turut (misal "Ragu-ragu" dua kali berturut-turut, atau "Belum Tahu" setelah sebelumnya "Hafal").
+
+**Catatan implementasi UI:** tombol ini muncul di layar Detail Karakter (`DESIGN_SYSTEM.md` layar #7) sebagai komponen `SelfAssessmentButtons` di `core:designsystem` — lihat `DESIGN_SYSTEM.md` Bagian 6.
 
 Detail rumus dan implementasi dibahas terpisah saat modul `:core:common` mulai dikerjakan — dokumen ini hanya menegaskan **di mana** logika ini hidup (murni Kotlin, bukan di ViewModel atau UI layer).
 

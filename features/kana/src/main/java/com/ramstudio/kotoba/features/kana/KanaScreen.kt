@@ -50,6 +50,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ramstudio.kotoba.ui.theme.Primary
 import com.ramstudio.kotoba.ui.theme.PrimaryLight
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.platform.LocalContext
 
 @Composable
 fun KanaRoute(viewModel: KanaViewModel) {
@@ -456,257 +458,281 @@ private fun CharacterDetailScreen(
     category: KanaCategorySpec?,
     onBack: () -> Unit,
 ) {
+    var selectedRomaji by remember { mutableStateOf<String?>(null) }
+    var selectedKana by remember { mutableStateOf<String?>(null) }
     val characters = category?.characters.orEmpty()
 
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFFF5F5F5))
             .padding(horizontal = 18.dp, vertical = 12.dp)
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
+        Column(
+            modifier = Modifier
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.spacedBy(0.dp)
         ) {
-            IconButton(onClick = onBack, modifier = Modifier.size(40.dp)) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back",
-                    tint = MaterialTheme.colorScheme.onBackground,
-                    modifier = Modifier.size(28.dp)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                IconButton(onClick = onBack, modifier = Modifier.size(40.dp)) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = "Back",
+                        tint = MaterialTheme.colorScheme.onBackground,
+                        modifier = Modifier.size(28.dp)
+                    )
+                }
+
+                Text(
+                    text = category?.title ?: "Kategori",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.weight(1f),
+                    textAlign = TextAlign.Center
                 )
+
+                Box(modifier = Modifier.size(40.dp))
             }
 
-            Text(
-                text = category?.title ?: "Kategori",
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.weight(1f),
-                textAlign = TextAlign.Center
-            )
+            Spacer(modifier = Modifier.height(8.dp))
 
-            Box(modifier = Modifier.size(40.dp))
-        }
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(3),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            modifier = Modifier.fillMaxSize(),
-            content = {
-                items(characters) { character ->
-                    val kanaCharacter = if (category?.title?.startsWith("Hiragana") == true) {
-                        when (character) {
-                            "a" -> "あ"
-                            "i" -> "い"
-                            "u" -> "う"
-                            "e" -> "え"
-                            "o" -> "お"
-                            "ka" -> "か"
-                            "ki" -> "き"
-                            "ku" -> "く"
-                            "ke" -> "け"
-                            "ko" -> "こ"
-                            "sa" -> "さ"
-                            "shi" -> "し"
-                            "su" -> "す"
-                            "se" -> "せ"
-                            "so" -> "そ"
-                            "ta" -> "た"
-                            "chi" -> "ち"
-                            "tsu" -> "つ"
-                            "te" -> "て"
-                            "to" -> "と"
-                            "na" -> "な"
-                            "ni" -> "に"
-                            "nu" -> "ぬ"
-                            "ne" -> "ね"
-                            "no" -> "の"
-                            "ha" -> "は"
-                            "hi" -> "ひ"
-                            "fu" -> "ふ"
-                            "he" -> "へ"
-                            "ho" -> "ほ"
-                            "ma" -> "ま"
-                            "mi" -> "み"
-                            "mu" -> "む"
-                            "me" -> "め"
-                            "mo" -> "も"
-                            "ya" -> "や"
-                            "yu" -> "ゆ"
-                            "yo" -> "よ"
-                            "ra" -> "ら"
-                            "ri" -> "り"
-                            "ru" -> "る"
-                            "re" -> "れ"
-                            "ro" -> "ろ"
-                            "wa" -> "わ"
-                            "wo" -> "を"
-                            "n" -> "ん"
-                            "ga" -> "が"
-                            "gi" -> "ぎ"
-                            "gu" -> "ぐ"
-                            "ge" -> "げ"
-                            "go" -> "ご"
-                            "za" -> "ざ"
-                            "ji" -> "じ"
-                            "zu" -> "ず"
-                            "ze" -> "ぜ"
-                            "zo" -> "ぞ"
-                            "ba" -> "ば"
-                            "bi" -> "び"
-                            "bu" -> "ぶ"
-                            "be" -> "べ"
-                            "bo" -> "ぼ"
-                            "kya" -> "きゃ"
-                            "kyu" -> "きゅ"
-                            "kyo" -> "きょ"
-                            "sha" -> "しゃ"
-                            "shu" -> "しゅ"
-                            "sho" -> "しょ"
-                            "cha" -> "ちゃ"
-                            "chu" -> "ちゅ"
-                            "cho" -> "ちょ"
-                            "nya" -> "にゃ"
-                            "nyu" -> "にゅ"
-                            "nyo" -> "にょ"
-                            "hya" -> "ひゃ"
-                            "hyu" -> "ひゅ"
-                            "hyo" -> "ひょ"
-                            "mya" -> "みゃ"
-                            "myu" -> "みゅ"
-                            "myo" -> "みょ"
-                            "rya" -> "りゃ"
-                            "ryu" -> "りゅ"
-                            "ryo" -> "りょ"
-                            "ja" -> "じゃ"
-                            "ju" -> "じゅ"
-                            "jo" -> "じょ"
-                            else -> character
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(3),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+                modifier = Modifier.fillMaxSize(),
+                content = {
+                    items(characters) { character ->
+                        val kanaCharacter = if (category?.title?.startsWith("Hiragana") == true) {
+                            when (character) {
+                                "a" -> "あ"
+                                "i" -> "い"
+                                "u" -> "う"
+                                "e" -> "え"
+                                "o" -> "お"
+                                "ka" -> "か"
+                                "ki" -> "き"
+                                "ku" -> "く"
+                                "ke" -> "け"
+                                "ko" -> "こ"
+                                "sa" -> "さ"
+                                "shi" -> "し"
+                                "su" -> "す"
+                                "se" -> "せ"
+                                "so" -> "そ"
+                                "ta" -> "た"
+                                "chi" -> "ち"
+                                "tsu" -> "つ"
+                                "te" -> "て"
+                                "to" -> "と"
+                                "na" -> "な"
+                                "ni" -> "に"
+                                "nu" -> "ぬ"
+                                "ne" -> "ね"
+                                "no" -> "の"
+                                "ha" -> "は"
+                                "hi" -> "ひ"
+                                "fu" -> "ふ"
+                                "he" -> "へ"
+                                "ho" -> "ほ"
+                                "ma" -> "ま"
+                                "mi" -> "み"
+                                "mu" -> "む"
+                                "me" -> "め"
+                                "mo" -> "も"
+                                "ya" -> "や"
+                                "yu" -> "ゆ"
+                                "yo" -> "よ"
+                                "ra" -> "ら"
+                                "ri" -> "り"
+                                "ru" -> "る"
+                                "re" -> "れ"
+                                "ro" -> "ろ"
+                                "wa" -> "わ"
+                                "wo" -> "を"
+                                "n" -> "ん"
+                                "ga" -> "が"
+                                "gi" -> "ぎ"
+                                "gu" -> "ぐ"
+                                "ge" -> "げ"
+                                "go" -> "ご"
+                                "za" -> "ざ"
+                                "ji" -> "じ"
+                                "zu" -> "ず"
+                                "ze" -> "ぜ"
+                                "zo" -> "ぞ"
+                                "ba" -> "ば"
+                                "bi" -> "び"
+                                "bu" -> "ぶ"
+                                "be" -> "べ"
+                                "bo" -> "ぼ"
+                                "kya" -> "きゃ"
+                                "kyu" -> "きゅ"
+                                "kyo" -> "きょ"
+                                "sha" -> "しゃ"
+                                "shu" -> "しゅ"
+                                "sho" -> "しょ"
+                                "cha" -> "ちゃ"
+                                "chu" -> "ちゅ"
+                                "cho" -> "ちょ"
+                                "nya" -> "にゃ"
+                                "nyu" -> "にゅ"
+                                "nyo" -> "にょ"
+                                "hya" -> "ひゃ"
+                                "hyu" -> "ひゅ"
+                                "hyo" -> "ひょ"
+                                "mya" -> "みゃ"
+                                "myu" -> "みゅ"
+                                "myo" -> "みょ"
+                                "rya" -> "りゃ"
+                                "ryu" -> "りゅ"
+                                "ryo" -> "りょ"
+                                "ja" -> "じゃ"
+                                "ju" -> "じゅ"
+                                "jo" -> "じょ"
+                                else -> character
+                            }
+                        } else {
+                            when (character) {
+                                "a" -> "ア"
+                                "i" -> "イ"
+                                "u" -> "ウ"
+                                "e" -> "エ"
+                                "o" -> "オ"
+                                "ka" -> "カ"
+                                "ki" -> "キ"
+                                "ku" -> "ク"
+                                "ke" -> "ケ"
+                                "ko" -> "コ"
+                                "sa" -> "サ"
+                                "shi" -> "シ"
+                                "su" -> "ス"
+                                "se" -> "セ"
+                                "so" -> "ソ"
+                                "ta" -> "タ"
+                                "chi" -> "チ"
+                                "tsu" -> "ツ"
+                                "te" -> "テ"
+                                "to" -> "ト"
+                                "na" -> "ナ"
+                                "ni" -> "ニ"
+                                "nu" -> "ヌ"
+                                "ne" -> "ネ"
+                                "no" -> "ノ"
+                                "ha" -> "ハ"
+                                "hi" -> "ヒ"
+                                "fu" -> "フ"
+                                "he" -> "ヘ"
+                                "ho" -> "ホ"
+                                "ma" -> "マ"
+                                "mi" -> "ミ"
+                                "mu" -> "ム"
+                                "me" -> "メ"
+                                "mo" -> "モ"
+                                "ya" -> "ヤ"
+                                "yu" -> "ユ"
+                                "yo" -> "ヨ"
+                                "ra" -> "ラ"
+                                "ri" -> "リ"
+                                "ru" -> "ル"
+                                "re" -> "レ"
+                                "ro" -> "ロ"
+                                "wa" -> "ワ"
+                                "wo" -> "ヲ"
+                                "n" -> "ン"
+                                "ga" -> "ガ"
+                                "gi" -> "ギ"
+                                "gu" -> "グ"
+                                "ge" -> "ゲ"
+                                "go" -> "ゴ"
+                                "za" -> "ザ"
+                                "ji" -> "ジ"
+                                "zu" -> "ズ"
+                                "ze" -> "ゼ"
+                                "zo" -> "ゾ"
+                                "ba" -> "バ"
+                                "bi" -> "ビ"
+                                "bu" -> "ブ"
+                                "be" -> "ベ"
+                                "bo" -> "ボ"
+                                "kya" -> "キャ"
+                                "kyu" -> "キュ"
+                                "kyo" -> "キョ"
+                                "sha" -> "シャ"
+                                "shu" -> "シュ"
+                                "sho" -> "ショ"
+                                "cha" -> "チャ"
+                                "chu" -> "チュ"
+                                "cho" -> "チョ"
+                                "nya" -> "ニャ"
+                                "nyu" -> "ニュ"
+                                "nyo" -> "ニョ"
+                                "hya" -> "ヒャ"
+                                "hyu" -> "ヒュ"
+                                "hyo" -> "ヒョ"
+                                "mya" -> "ミャ"
+                                "myu" -> "ミュ"
+                                "myo" -> "ミョ"
+                                "rya" -> "リャ"
+                                "ryu" -> "リュ"
+                                "ryo" -> "リョ"
+                                "ja" -> "ジャ"
+                                "ju" -> "ジュ"
+                                "jo" -> "ジョ"
+                                else -> character
+                            }
                         }
-                    } else {
-                        when (character) {
-                            "a" -> "ア"
-                            "i" -> "イ"
-                            "u" -> "ウ"
-                            "e" -> "エ"
-                            "o" -> "オ"
-                            "ka" -> "カ"
-                            "ki" -> "キ"
-                            "ku" -> "ク"
-                            "ke" -> "ケ"
-                            "ko" -> "コ"
-                            "sa" -> "サ"
-                            "shi" -> "シ"
-                            "su" -> "ス"
-                            "se" -> "セ"
-                            "so" -> "ソ"
-                            "ta" -> "タ"
-                            "chi" -> "チ"
-                            "tsu" -> "ツ"
-                            "te" -> "テ"
-                            "to" -> "ト"
-                            "na" -> "ナ"
-                            "ni" -> "ニ"
-                            "nu" -> "ヌ"
-                            "ne" -> "ネ"
-                            "no" -> "ノ"
-                            "ha" -> "ハ"
-                            "hi" -> "ヒ"
-                            "fu" -> "フ"
-                            "he" -> "ヘ"
-                            "ho" -> "ホ"
-                            "ma" -> "マ"
-                            "mi" -> "ミ"
-                            "mu" -> "ム"
-                            "me" -> "メ"
-                            "mo" -> "モ"
-                            "ya" -> "ヤ"
-                            "yu" -> "ユ"
-                            "yo" -> "ヨ"
-                            "ra" -> "ラ"
-                            "ri" -> "リ"
-                            "ru" -> "ル"
-                            "re" -> "レ"
-                            "ro" -> "ロ"
-                            "wa" -> "ワ"
-                            "wo" -> "ヲ"
-                            "n" -> "ン"
-                            "ga" -> "ガ"
-                            "gi" -> "ギ"
-                            "gu" -> "グ"
-                            "ge" -> "ゲ"
-                            "go" -> "ゴ"
-                            "za" -> "ザ"
-                            "ji" -> "ジ"
-                            "zu" -> "ズ"
-                            "ze" -> "ゼ"
-                            "zo" -> "ゾ"
-                            "ba" -> "バ"
-                            "bi" -> "ビ"
-                            "bu" -> "ブ"
-                            "be" -> "ベ"
-                            "bo" -> "ボ"
-                            "kya" -> "キャ"
-                            "kyu" -> "キュ"
-                            "kyo" -> "キョ"
-                            "sha" -> "シャ"
-                            "shu" -> "シュ"
-                            "sho" -> "ショ"
-                            "cha" -> "チャ"
-                            "chu" -> "チュ"
-                            "cho" -> "チョ"
-                            "nya" -> "ニャ"
-                            "nyu" -> "ニュ"
-                            "nyo" -> "ニョ"
-                            "hya" -> "ヒャ"
-                            "hyu" -> "ヒュ"
-                            "hyo" -> "ヒョ"
-                            "mya" -> "ミャ"
-                            "myu" -> "ミュ"
-                            "myo" -> "ミョ"
-                            "rya" -> "リャ"
-                            "ryu" -> "リュ"
-                            "ryo" -> "リョ"
-                            "ja" -> "ジャ"
-                            "ju" -> "ジュ"
-                            "jo" -> "ジョ"
-                            else -> character
-                        }
-                    }
 
-                    Surface(
-                        shape = RoundedCornerShape(18.dp),
-                        color = Color.White,
-                        tonalElevation = 0.dp,
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Column(
-                            modifier = Modifier
-                                .padding(vertical = 16.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        Surface(
+                            shape = RoundedCornerShape(18.dp),
+                            color = Color.White,
+                            tonalElevation = 0.dp,
+                            modifier = Modifier.fillMaxWidth(),
+                            onClick = {
+                                selectedRomaji = character
+                                selectedKana = kanaCharacter
+                            }
                         ) {
-                            Text(
-                                text = kanaCharacter,
-                                style = MaterialTheme.typography.displaySmall,
-                                color = category?.symbolColor ?: MaterialTheme.colorScheme.primary,
-                                fontWeight = FontWeight.Bold
-                            )
-                            Text(
-                                text = character,
-                                style = MaterialTheme.typography.bodyLarge,
-                                color = MaterialTheme.colorScheme.onSurface,
-                                textAlign = TextAlign.Center
-                            )
+                            Column(
+                                modifier = Modifier
+                                    .padding(vertical = 16.dp),
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                Text(
+                                    text = kanaCharacter,
+                                    style = MaterialTheme.typography.displaySmall,
+                                    color = category?.symbolColor ?: MaterialTheme.colorScheme.primary,
+                                    fontWeight = FontWeight.Bold
+                                )
+                                Text(
+                                    text = character,
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    color = MaterialTheme.colorScheme.onSurface,
+                                    textAlign = TextAlign.Center
+                                )
+                            }
                         }
                     }
                 }
-            }
-        )
+            )
+        }
+
+        if (selectedKana != null && selectedRomaji != null) {
+            CharacterDetailCard(
+                kana = selectedKana!!,
+                romaji = selectedRomaji!!,
+                categoryTitle = category?.title ?: "",
+                onClose = {
+                    selectedKana = null
+                    selectedRomaji = null
+                }
+            )
+        }
     }
 }
 
