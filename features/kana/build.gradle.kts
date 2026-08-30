@@ -21,4 +21,5 @@ dependencies {
     implementation(Libs.nav3Runtime)
     implementation(Libs.composeUi)
     implementation(Libs.composeMaterial3)
+    implementation(Libs.composeMaterialIconsExtended)
 }
